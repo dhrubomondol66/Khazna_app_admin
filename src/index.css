@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1a6bff;
+  --color-primary-dark: #093a6e;
+  --color-accent: #00c6a7;
+  --color-bg-light: #f8fafc;
+  --color-text-main: #1e293b;
+  --color-text-muted: #64748b;
+}
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+}
+
+/* Glassmorphism Utilities */
+.glass-card {
+  @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+.glass-card-dark {
+  @apply bg-slate-900/40 backdrop-blur-lg border border-white/10 shadow-2xl;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full hover:bg-slate-400 transition-colors;
+}
+
+/* Badge Styles */
+.badge {
+  @apply px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider;
+}
+.badge-premium { @apply bg-blue-100 text-blue-700; }
+.badge-free { @apply bg-slate-100 text-slate-600; }
+.badge-active { @apply bg-emerald-100 text-emerald-700; }
+.badge-inactive { @apply bg-rose-100 text-rose-700; }
+
+/* Table Styles */
+.table-container {
+  @apply overflow-hidden rounded-xl border border-slate-200 bg-white;
+}
+
+table {
+  @apply w-full text-left border-collapse;
+}
+
+th {
+  @apply px-6 py-4 text-[11px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 bg-slate-50/50;
+}
+
+td {
+  @apply px-6 py-4 text-sm text-slate-600 border-b border-slate-100;
+}
+
+tr:last-child td {
+  @apply border-b-0;
+}
+
+tr:hover td {
+  @apply bg-slate-50/50;
+}
+
+/* Transitions */
+.nav-transition {
+  @apply transition-all duration-200 ease-in-out;
+}
